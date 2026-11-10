@@ -1,0 +1,71 @@
+{
+  "name": "dsh-evolve-reason2",
+  "version": "0.2.0",
+  "description": "Reason2: claim-guided evolve with real locus, executable R+/R-, tip holdout, A/B protocol. Independent standalone arm (fork of Reason).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "bin": {
+    "reason2-run": "./bin/reason2-run.js",
+    "reason2-ab": "./bin/ab-compare.js",
+    "reason2-replay": "./bin/replay-event.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "bin",
+    "tasks",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "ORIGIN.md",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "node bin/reason2-run.js --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "example:mock": "node examples/mock-evolve-run.js",
+    "ab": "node bin/ab-compare.js --budget 6",
+    "replay": "node bin/replay-event.js"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4",
+    "@deepseek-ai/dsh-tools": ">=0.1.7-rc.1 <0.2.0",
+    "dsh-evolve-loop": ">=0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": { "optional": true },
+    "@deepseek-ai/dsh-tools": { "optional": true },
+    "dsh-evolve-loop": { "optional": true }
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ddddwrrert/Reason2.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "evolve",
+    "reason2",
+    "claim",
+    "attribution",
+    "organon"
+  ]
+}

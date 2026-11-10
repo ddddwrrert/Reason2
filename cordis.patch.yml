@@ -1,0 +1,6 @@
+# Optional DSH bundle patch. Standalone Reason2 does not need this.
+# Set DSH_EVOLVE_REASON2=1 when installed beside dsh-evolve-loop.
+- insert:
+    - id: plugin-dsh-evolve-reason2
+      name: dsh-evolve-reason2
+      config: {}
